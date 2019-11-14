@@ -30,7 +30,7 @@ func Init (env EnvInterface) (db *sql.DB, version string, err error) {
 
 	dbName := *env.GetDatabase()
 
-	if port == "" {
+	if dbName == "" {
 		dbName = "sys"
 	}
 
