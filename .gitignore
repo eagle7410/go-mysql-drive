@@ -32,7 +32,7 @@ node_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+lib/.env
 
 # Storm
 .idea/

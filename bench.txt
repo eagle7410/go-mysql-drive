@@ -1,0 +1,9 @@
+----------------
+Version 5.7.15
+----------------
+goos: linux
+goarch: amd64
+pkg: github.com/eagle7410/go-myysql-drive/lib
+BenchmarkConnect-16    	    4432	    237883 ns/op
+PASS
+ok  	github.com/eagle7410/go-myysql-drive/lib	1.557s
