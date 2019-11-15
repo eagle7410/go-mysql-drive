@@ -12,6 +12,7 @@ type (
 		GetMysqlHost() *string
 		GetMysqlPort() *string
 		GetMysqlDatabase() *string
+		GetMysqlDnsParams() *string
 	}
 )
 
@@ -34,9 +35,15 @@ func Init (env EnvInterface) (db *sql.DB, version string, err error) {
 		dbName = "sys"
 	}
 
-	linkConnect := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v",
+	dnsParams := *env.GetMysqlDnsParams()
+
+	if dnsParams == "" {
+		dnsParams = "parseTime=true"
+	}
+
+	linkConnect := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?%v",
 		*env.GetMysqlUser(), *env.GetMysqlPassword(),
-		host, port, dbName)
+		host, port, dbName, dnsParams)
 
 
 	db, err = sql.Open("mysql", linkConnect)

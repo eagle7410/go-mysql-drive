@@ -14,9 +14,13 @@ type Env struct {
 	DbHost,
 	DbPass,
 	DbName,
+	DnsParams,
 	DbUser string
 }
 
+func (i *Env) GetMysqlDnsParams() *string  {
+	return &i.DnsParams
+}
 func (i *Env) GetMysqlDatabase() *string  {
 	return &i.DbName
 }
