@@ -11,7 +11,7 @@ type (
 		GetMysqlPassword() *string
 		GetMysqlHost() *string
 		GetMysqlPort() *string
-		GetMysq1lDatabase() *string
+		GetMysqlDatabase() *string
 	}
 )
 
