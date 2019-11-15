@@ -28,7 +28,7 @@ func Init (env EnvInterface) (db *sql.DB, version string, err error) {
 		port = "3306"
 	}
 
-	dbName := *env.GetMysq1lDatabase()
+	dbName := *env.GetMysqlDatabase()
 
 	if dbName == "" {
 		dbName = "sys"

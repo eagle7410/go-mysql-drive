@@ -17,7 +17,7 @@ type Env struct {
 	DbUser string
 }
 
-func (i *Env) GetMysq1lDatabase() *string  {
+func (i *Env) GetMysqlDatabase() *string  {
 	return &i.DbName
 }
 
