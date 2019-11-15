@@ -7,35 +7,35 @@ import (
 )
 type (
 	EnvInterface interface {
-		GetUser() *string
-		GetPassword() *string
-		GetHost() *string
-		GetPort() *string
-		GetDatabase() *string
+		GetMysqlUser() *string
+		GetMysqlPassword() *string
+		GetMysqlHost() *string
+		GetMysqlPort() *string
+		GetMysq1lDatabase() *string
 	}
 )
 
 func Init (env EnvInterface) (db *sql.DB, version string, err error) {
-	host := *env.GetHost()
+	host := *env.GetMysqlHost()
 
 	if host == "" {
 		host = "127.0.0.1"
 	}
 
-	port := *env.GetPort()
+	port := *env.GetMysqlPort()
 
 	if port == "" {
 		port = "3306"
 	}
 
-	dbName := *env.GetDatabase()
+	dbName := *env.GetMysq1lDatabase()
 
 	if dbName == "" {
 		dbName = "sys"
 	}
 
 	linkConnect := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v",
-		*env.GetUser(), *env.GetPassword(),
+		*env.GetMysqlUser(), *env.GetMysqlPassword(),
 		host, port, dbName)
 
 

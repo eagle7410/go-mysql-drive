@@ -17,20 +17,20 @@ type Env struct {
 	DbUser string
 }
 
-func (i *Env) GetDatabase() *string  {
+func (i *Env) GetMysq1lDatabase() *string  {
 	return &i.DbName
 }
 
-func (i *Env) GetPort() *string  {
+func (i *Env) GetMysqlPort() *string  {
 	return &i.DbPort
 }
-func (i *Env) GetHost() *string  {
+func (i *Env) GetMysqlHost() *string  {
 	return &i.DbHost
 }
-func (i *Env) GetPassword() *string  {
+func (i *Env) GetMysqlPassword() *string  {
 	return &i.DbPass
 }
-func (i *Env) GetUser() *string  {
+func (i *Env) GetMysqlUser() *string  {
 	return &i.DbUser
 }
 
